@@ -9,5 +9,13 @@ public class Test {
                 .build();
 
         System.out.println(user);
+
+        User user2 = new User.UserBuilder()
+                .setUserId("test_user2")
+                .setUserEmail("test2@gmail.com")
+                .setUserName("sukhadev2")
+                .build();
+
+        System.out.println(user2);
     }
 }
