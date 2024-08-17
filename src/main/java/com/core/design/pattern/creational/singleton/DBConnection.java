@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public class DBConnection implements Serializable, Cloneable {
 
-    private static DBConnection dbConnection = null; //lazy initialization
+    private static volatile DBConnection dbConnection = null; //lazy initialization
     // private static DBConnection dbConnection = new DBConnection(); //eager initialization
 
     private DBConnection() {
