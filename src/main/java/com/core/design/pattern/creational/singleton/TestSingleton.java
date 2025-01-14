@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 public class TestSingleton {
 
     public static void main(String[] args) {
-        ExecutorService service = Executors.newFixedThreadPool(5);
+        ExecutorService service = Executors.newFixedThreadPool(4);
 
         service.submit(new Task());
         service.submit(new Task());
@@ -18,7 +18,7 @@ public class TestSingleton {
         service.submit(new Task());
         service.submit(new Task());
 
-        //service.close();
+        service.close();
     }
 }
 
@@ -26,9 +26,9 @@ class Task implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Start===========" + Thread.currentThread().getName());
+        //System.out.println("Start===========" + Thread.currentThread().getName());
         DBConnection connection = DBConnection.getInstance();
-        System.out.println(connection.hashCode());
-        System.out.println("End===========" + Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getName() + " ==> " + connection.hashCode());
+        //System.out.println("End===========" + Thread.currentThread().getName());
     }
 }
