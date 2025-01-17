@@ -32,6 +32,6 @@ public class DBConnection implements Serializable, Cloneable {
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return dbConnection;
+        throw new CloneNotSupportedException();
     }
 }
